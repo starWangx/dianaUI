@@ -1,0 +1,116 @@
+---
+name: Select —— 选择框
+route: /select
+---
+import { Playground } from 'docz'
+import Select from './index.tsx'
+
+# Select 选择框组件
+
+## Demo
+<Playground>
+  <Select
+    multiple
+    theme='basic'
+    renderOption={[
+      'option1',
+      'option2',
+      'option3',
+      'option4',
+      'option5'
+    ]}
+  />
+
+  <Select
+    theme='calendar'
+  />
+
+  <br />
+  <br />
+  <Select
+    theme='search'
+    renderOption={[
+          '猴子',
+          '猪猪',
+          '狗狗',
+          '猫猫',
+          '哈哈'
+        ]}
+  />
+
+  <br />
+  <br />
+  <Select
+    multiple
+    placeholder='多选+搜索'
+    theme='search'
+    renderOption={[
+          'option1',
+          'option2',
+          'option3',
+          'option4',
+          'option5'
+        ]}
+  />
+
+  <br />
+  <br />
+  <Select
+    multiple
+    placeholder='单选+搜索'
+    theme='search'
+    renderOption={[
+          'option1',
+          'option2',
+          'option3',
+          'option4',
+          'option5'
+        ]}
+  />
+
+  <br />
+  <br />
+  <Select
+    disabled
+    theme='search'
+    renderOption={[
+          'option1',
+          'option2',
+          'option3',
+          'option4',
+          'option5'
+        ]}
+  />
+</Playground>
+
+## API - Props
+- `theme` 三种主题：`basic`(默认)、`calendar`(日历)、`search`(搜索)
+- `renderOption` 选择框选项渲染
+- `placeholder` 占位符
+- `searchPlaceholder` 搜索下拉菜单占位符
+- `onSearch` 文本框值变化时回调
+- `onFocus` 搜索框获得焦点时回调
+- `onBlur` 搜索框失去焦点时回调
+- `onChange` 选择改变的回调
+- `onDelete` 删除多选标签时回调
+- `onSelect` 选择选项时的回调
+
+---
+
+## Option 上传组件选项
+## API - Props
+- `title`
+- `label`
+- `value`
+- `key`
+- `className`
+- `disabled`
+- `opt`
+- `prefix`
+- `index`
+- `optActive`
+- `props`
+- `selected`
+- `onClick`
+- `onMouseOver`
+

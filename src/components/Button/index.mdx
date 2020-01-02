@@ -1,0 +1,111 @@
+---
+name: Button —— 按钮
+route: /button
+---
+import { Playground, Props } from 'docz'
+import Button from './index.tsx'
+
+# Button 按钮组件
+
+<Props of={Button} />
+
+## Demo
+
+<Playground>
+
+<table>
+  <tr>
+    <td></td>
+    <td align="center" >Normal</td>
+    <td align="center" >Disable</td>
+  </tr>
+
+  <tr height='80px'>
+    <td width='120px' > Primary Button </td>
+    <td width='120px' align="center"> 
+      <Button
+        theme='primary'
+        >
+        主按钮
+      </Button>
+    </td>
+    <td align="center"> 
+      <Button
+        theme='primary'
+        disabled
+        >
+        主按钮
+      </Button>
+    </td>
+    
+  </tr>
+
+
+  <tr height='80px'>
+    <td>Default Button </td>
+    <td align="center"> 
+      <Button
+        theme='default'
+        >
+        次按钮
+      </Button>
+    </td>
+    <td align="center"> 
+      <Button
+        theme='default'
+        disabled
+        >
+        次按钮
+      </Button>
+    </td>
+  </tr>
+
+  <tr height='80px'>
+    <td>Icon Button</td>
+    <td align="center"> 
+      <Button
+        theme='icon'
+        >
+        保存
+      </Button>
+    </td>
+    <td align="center"> 
+      <Button
+        theme='icon'
+        disabled
+        >
+        保存
+      </Button>
+    </td>
+  </tr>
+
+  <tr height='80px'>
+    <td>Menu Button</td>
+    <td align="center"> 
+      <Button
+        theme='menu'
+        size='small'
+        >
+        small
+      </Button>
+    </td>
+    <td align="center"> 
+      <Button
+        theme='menu'
+        disabled
+        >
+        菜单按钮
+      </Button>
+    </td>
+  </tr>
+
+</table>
+    
+</Playground>
+
+
+## API - Props
+
+#### `theme` 四种主题: `Primary`( 主按钮 )、`Default`( 次按钮 )、`icon`( 含icon )、`menu`( 菜单按钮 )
+#### `size` 三种型号: `small`( 小 )、`default`( 默认 )、`large`( 大 )
+#### `disabled` 是否可点

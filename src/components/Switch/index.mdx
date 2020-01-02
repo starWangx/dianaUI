@@ -1,0 +1,42 @@
+---
+name: Switch —— 开关
+route: /switch
+---
+import { Playground, Props } from 'docz'
+import Switch from './index.tsx'
+
+# Switch 开关组件
+
+<Props of={Switch} />
+
+## Demo
+<Playground>
+  <Switch />
+  <br />
+  <br />
+  <Switch
+    className='custom'
+    renderChecked='开'
+    renderUnChecked='关'
+    defaultChecked
+    autoFocus
+  />
+  <br />
+  <br />
+  <Switch
+    disabled
+  />
+</Playground>
+
+## API - Props
+- `style` 样式style属性
+- `className` 类名
+- `autoFocus` 自动聚焦
+- `checked` 是否 `checked`，如果传入该值，则 `Switch` 组件为受控组件
+- `defaultChecked` 状态`checked` 的初始值
+- `renderChecked` 状态是 `checked` 时展示的内容
+- `renderUnChecked` 状态是 `unchecked` 时展示的内容
+- `onChange` 回调 - 当`checked` 状态更改时
+- `onClick` 回调 - 点击
+- `onMouseUp` 回调 - 鼠标抬起
+

@@ -1,0 +1,87 @@
+{
+  "name": "@hupu/diana-ui",
+  "version": "0.0.12",
+  "description": "The Diana React UI Component lib for hupu frontend",
+  "main": "lib/components/index.js",
+  "scripts": {
+    "dev": "docz dev",
+    "lint": "eslint src/ --ext .ts --ext .tsx",
+    "lint:fix": "eslint src/ --ext .ts --ext .tsx --fix",
+    "test:jest": "jest",
+    "update:snapshot": "jest --updateSnapshot",
+    "upgrade:rc": "yarn upgrade @hupu/rc-basic@latest",
+    "release": "npm run build:version",
+    "build": "rm -rf lib && npm run build:tsc && cp -ri src/assets lib/assets && npm run build:publish",
+    "build_old": "npm run build:tsc && npm run build:webpack && cp dist/components/index.js lib/components/index.js && rm -rf dist",
+    "build:tsc": "tsc -b",
+    "build:jenkins": "cross-env ENV NPM_TOKEN=pF13iBruk+SGS2+j+SXQUYnPlOn0u8/lGYs7BGs8ESQ=",
+    "build:publish": "./build/publish.sh",
+    "build:version": "./build/version.sh",
+    "build:webpack": "webpack --config build/webpack.config.prod.js",
+    "build:demo": "docz build --base /diana"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint && npm run test:jest",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "UI",
+    "Component",
+    "Lib",
+    "UED",
+    "组件库",
+    "后台组件库"
+  ],
+  "author": "hupu-frontend",
+  "license": "MIT",
+  "dependencies": {
+    "@hupu/rc-basic": "^0.0.47",
+    "classnames": "^2.2.6",
+    "peeler-js": "^0.2.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "4.1.8",
+    "@types/styled-jsx": "^2.2.8",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "del": "^5.0.0",
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-transform-css": "^2.0.0",
+    "lint-staged": "^9.2.3",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  }
+}

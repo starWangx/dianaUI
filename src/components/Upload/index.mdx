@@ -1,0 +1,44 @@
+---
+name: Upload —— 上传
+route: /upload
+---
+import { Playground, Props } from 'docz'
+import Upload from './index.tsx'
+
+# Upload 上传组件
+
+<Props of={Upload} />
+
+## Demo
+<Playground>
+  <Upload
+    theme='click'
+    action='http://all-backend.hupu.com/admin/upload'
+  />
+  <br />
+  <br />
+  <Upload
+    theme='card'
+    action='http://all-backend.hupu.com/admin/upload'
+    name='image'
+    accept='image'
+    multiple
+    onSuccess={res => console.info('上传成功', res)}
+    onFinish={res => console.info('上传完成')}
+    uploadModel='concatenation'
+  />
+  <br />
+  <br />
+  <Upload
+    theme='drag'
+    action='http://all-backend.hupu.com/admin/upload'
+  />
+</Playground>
+
+## API - Props
+- `style` 样式style属性
+- `className` 类名
+- `theme` 三种主题：`click`(默认)、`card`、`drag`
+- `hintMsg` 提示文本内容，可选
+- `showHint` 是否展示提示文本，默认展示
+- `preview` 是否展示预览，默认不展示

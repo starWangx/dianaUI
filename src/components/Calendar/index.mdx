@@ -1,0 +1,41 @@
+---
+name: Calendar —— 日历
+route: /calendar
+---
+import { Playground } from 'docz'
+import Calendar from './index.tsx'
+
+# Calendar 日历组件
+
+## Demo
+<Playground>
+  <Calendar />
+  <br/>
+  <br/>
+  <Calendar
+    active={
+      {
+        day: '14'
+      }
+    }
+  />
+  <br/>
+  <br/>
+  <Calendar 
+    year={2035}
+    month={3} 
+    day={22}
+  />
+  <br/>
+  <br/>
+  <Calendar
+    disabilities={[{day: 15}, {day: 16}, {day: 20}]}
+  />
+</Playground>
+
+## API - Props
+- `year` 自定义 - 年
+- `month` 自定义 - 月
+- `day` 自定义 - 日
+- `active` 自定义 - 高亮的日期
+- `disabilities` 自定义 - 置灰的日期
